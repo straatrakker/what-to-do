@@ -11,4 +11,4 @@ COPY target/leukedingetjes-0.0.1-SNAPSHOT.jar /app/leukedingetjes-0.0.1-SNAPSHOT
 EXPOSE 8080
 
 # Run the application
-ENTRYPOINT ["java", "-jar", "your-application.jar"]
+ENTRYPOINT ["java", "-jar", "leukedingetjes-0.0.1-SNAPSHOT.jar"]
