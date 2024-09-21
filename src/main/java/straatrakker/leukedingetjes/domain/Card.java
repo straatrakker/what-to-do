@@ -12,8 +12,23 @@ public class Card {
 
     private String description;
     private Float price;
+    private Boolean atHome;
+    private Boolean outdoors;
 
     public Card() {
+        this.atHome = false;
+    }
+
+    public Card(String description) {
+        this.description = description;
+        this.price = (float) 0;
+        this.atHome = false;
+    }
+
+    public Card(String description, Float price) {
+        this.description = description;
+        this.price = price;
+        this.atHome = false;
     }
 
     public void setDescription(String description) {
@@ -28,14 +43,12 @@ public class Card {
         this.price = price;
     }
 
-    public Card(String description) {
-        this.description = description;
-        this.price = (float) 0;
+    public void setAtHome(Boolean atHome) {
+        this.atHome = atHome;
     }
 
-    public Card(String description, Float price) {
-        this.description = description;
-        this.price = price;
+    public void setOutdoors(Boolean outdoors) {
+        this.outdoors = outdoors;
     }
 
     public String getDescription() {
@@ -48,6 +61,14 @@ public class Card {
 
     public Boolean isFree() {
         return this.price <= 0;
+    }
+
+    public Boolean getAtHome() {
+        return atHome;
+    }
+
+    public Boolean getOutdoors() {
+        return outdoors;
     }
 
     public Expensiveness getExpensiveness() {

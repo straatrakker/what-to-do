@@ -48,16 +48,21 @@ public class CardService {
         return freeCards;
     }
 
-    public Card getRandomCard(List<Expensiveness> expensivenesses) {
+    public Card getRandomCard(List<Expensiveness> expensivenesses, Boolean atHome, Boolean outdoors) {
         Random random = new Random();
         List<Card> cards = this.getCards();
         List<Card> results = new ArrayList<>();
 
-        for (Card card: cards) {
-            if (expensivenesses.contains(card.getExpensiveness())) {
+        for (Card card : cards) {
+            boolean matchesExpensiveness = (expensivenesses == null || expensivenesses.isEmpty() || expensivenesses.contains(card.getExpensiveness()));
+            boolean matchesAtHome = (atHome == null || atHome.equals(card.getAtHome()));
+            boolean matchesOutdoors = (outdoors == null || card.getOutdoors() == null || outdoors.equals(card.getOutdoors()));
+
+            if (matchesExpensiveness && matchesAtHome && matchesOutdoors) {
                 results.add(card);
             }
         }
+
 
         if(results.size() == 0) {
             return null;

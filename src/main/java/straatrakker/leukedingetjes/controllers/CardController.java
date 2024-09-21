@@ -29,9 +29,8 @@ public class CardController {
 
 
     @GetMapping("/pick")
-    public ResponseEntity<Card> getRandomCard(@RequestParam(required = false) List<Expensiveness> expensiveness) {
-
-        return ResponseEntity.ok(cardService.getRandomCard(expensiveness));
+    public ResponseEntity<Card> getRandomCard(@RequestParam(required = false) List<Expensiveness> expensiveness, @RequestParam(required = false) Boolean atHome, @RequestParam(required = false) Boolean outdoors) {
+        return ResponseEntity.ok(cardService.getRandomCard(expensiveness, atHome, outdoors));
     }
 
     @PostMapping
