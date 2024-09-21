@@ -1,5 +1,6 @@
 straatrakker/leukedingetjes/controllers/CardController.class
 straatrakker/leukedingetjes/domain/Card.class
+straatrakker/leukedingetjes/config/WebConfig.class
 straatrakker/leukedingetjes/repositories/CardRepository.class
 straatrakker/leukedingetjes/LeukedingetjesApplication.class
 straatrakker/leukedingetjes/domain/Expensiveness.class
